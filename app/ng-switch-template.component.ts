@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'ng-switch-directive',
+    selector: 'ng-switch-template',
     template: `
-        <h1>ngSwitch</h1>
+        <h1>ngSwitch with template</h1>
         
         <select #select [(ngModel)]="choice">
             <option value="one">one</option>
@@ -13,12 +13,12 @@ import { Component } from '@angular/core';
         </select>
         
         <p [ngSwitch]="choice">
-            <span *ngSwitchCase="'one'">First</span>
-            <span *ngSwitchCase="'two'">Second</span>
-            <span *ngSwitchCase="'three'">Third</span>
-            <span *ngSwitchDefault>Default</span>
+            <template [ngSwitchCase]="'one'"><span>First</span></template>
+            <template [ngSwitchCase]="'two'"><span>Second</span></template>
+            <template [ngSwitchCase]="'three'"><span>Third</span></template>
+            <template ngSwitchDefault><span>Default</span></template>
         </p>`
 })
-export class NgSwitchComponent {
+export class NgSwitchTemplateComponent {
     private choice: string = 'one';
 }

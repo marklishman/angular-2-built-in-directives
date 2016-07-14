@@ -1,38 +1,24 @@
-import {Component} from '@angular/core';
+import { Component, ViewChild, ElementRef, ViewChildren, QueryList, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'ng-if-directive',
     template: `
         <h1>ngIf</h1>
-        <span *ngFor="let item of forLoopArray(10); let i=index">
-            <a href="#" (click)="position=$event.target.textContent; false;">{{i}}</a>
-        </span>
+        
         <p>
-            <span *ngIf="position < 5">lower</span>
-            <span *ngIf="position > 5">upper</span>
+            <button (click)="show=!show">{{show ? 'hide' : 'show'}}</button>
         </p>
         
-        <h3>with <code>&lt;template&gt;</code> directive</h3>
-        <div>
-            <span template="ngIf:position < 5">lower</span>
-            <span template="ngIf:position > 5">upper</span>
-        </div>
-
-        <h3>with <code>&lt;template&gt;</code> element</h3>
-        <div>
-            <template [ngIf]="position < 5">
-              <span>lower</span>
-            </template>
-            <template [ngIf]="position > 5">
-              <span>upper</span>
-            </template>
+        <div *ngIf="show">
+            <p>
+                <label><input #big type="radio" name="size" (change)="0" checked>Big</label>
+                <label><input #small type="radio" name="size" (change)="0">Small</label>
+            </p>
+        
+            <h2 *ngIf="big.checked">Big header</h2>
+            <p *ngIf="small.checked">Small paragraph</p>
         </div>`
 })
 export class NgIfComponent {
-
-    private position: number;
-
-    private forLoopArray(elements: number): Array<any> {
-        return new Array(elements);
-    }
+    private show = false;
 }

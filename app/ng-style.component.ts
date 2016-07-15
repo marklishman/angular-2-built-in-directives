@@ -4,10 +4,12 @@ import { Component } from '@angular/core';
     selector: 'ng-style-directive',
     template: `
         <h1>ngStyle</h1>
+        
         <h2 [ngClass]="{gray: position < 5, pink: position > 5}">ngIf, ngClass, ngStyle</h2>
         <span *ngFor="let item of forLoopArray(10); let i=index">
             <a href="#" (click)="position=$event.target.textContent; false;">{{i}}</a>
         </span>
+        
         <p [ngStyle]="styles">
             <span *ngIf="position < 5">lower</span>
             <span *ngIf="position > 5">upper</span>

@@ -5,36 +5,47 @@ import { Component } from '@angular/core';
     template: `
         <h1>ngClass</h1>
         
-        <h2 [ngClass]="{gray: position < 5, pink: position > 5}">ngIf, ngClass, ngStyle</h2>
-        <span *ngFor="let item of forLoopArray(10); let i=index">
-            <a href="#" (click)="position=$event.target.textContent; false;">{{i}}</a>
-        </span>
-        <p [ngStyle]="styles">
-            <span *ngIf="position < 5">lower</span>
-            <span *ngIf="position > 5">upper</span>
+        <button (click)="myClasses='bright border'">Bright</button>
+        <button (click)="myClasses='dull'">Dull</button>
+        <button (click)="myClasses=''">Default</button>
+        
+        <p #part1 class="box big" [ngClass]="myClasses">
+            Classes: {{part1.className}} 
         </p>
         
-        <p ngClass="gray">
-            Built in directive with one-time binding. 
-            ngClass is the directive and also an @Input on the directive.
+        <button (click)="big=!big">Big {{big ? 'off' : 'on'}}</button>
+        <button (click)="back=!back">Background {{back ? 'off' : 'on'}}</button>
+        <button (click)="bord=!bord">Border {{bord ? 'off' : 'on'}}</button>
+        
+        <p #part2 class="box" [ngClass]="{'big' : big, 'bright' : back, 'border' : bord}">
+            Classes: {{part2.className}} 
+        </p>
+        
+        <h3>Class binding</h3>
+        <button (click)="brighter=!brighter">Bright {{brighter ? 'off' : 'on'}}</button>
+        <p #part3 [class.box]="brighter" [class.bright]="brighter" [class.border]="brighter">
+            Classes: {{part3.className}} 
         </p>`,
-    styles: [
-        '.gray {background-color: LightGray}',
-        '.pink {background-color: Pink}'
+    styles: [`
+        .box {
+            max-width: 400px;
+            padding: 5px;
+        }
+        .big {
+            font-size: 26px;
+        }
+        .dull {
+            background-color: LightGray;
+        }
+        .bright {
+            color: Blue;
+            background-color: Pink; 
+        }
+        .bright.border {
+            border: 1px solid Red;
+        }`
     ]
 })
 export class NgClassComponent {
-
-    private position: number;
-
-    private get styles(): any {
-        return {
-            fontSize: (this.position * 20) + 'px',
-            textDecoration: (this.position < 7) ? 'underline' : ''
-        }
-    }
-
-    private forLoopArray(elements: number): Array<any> {
-        return new Array(elements);
-    }
+    private myClasses = '';
 }

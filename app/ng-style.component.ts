@@ -5,32 +5,33 @@ import { Component } from '@angular/core';
     template: `
         <h1>ngStyle</h1>
         
-        <h2 [ngClass]="{gray: position < 5, pink: position > 5}">ngIf, ngClass, ngStyle</h2>
-        <span *ngFor="let item of forLoopArray(10); let i=index">
-            <a href="#" (click)="position=$event.target.textContent; false;">{{i}}</a>
-        </span>
+        <button (click)="big=!big">Big {{big ? 'off' : 'on'}}</button>
+        <button (click)="back=!back">Background {{back ? 'off' : 'on'}}</button>
+        <button (click)="bord=!bord">Border {{bord ? 'off' : 'on'}}</button>
         
-        <p [ngStyle]="styles">
-            <span *ngIf="position < 5">lower</span>
-            <span *ngIf="position > 5">upper</span>
+        <p #part1 class="box" [ngStyle]="myStyles">
+            {{part1.style.cssText}} 
+        </p>
+        
+        <h3>Style binding</h3>
+        <button (click)="brighter=!brighter">Bright {{brighter ? 'off' : 'on'}}</button>
+        <p #part2 class="box" [style.font-size.px]="brighter ? 26 : 14"
+                              [style.background-color]="brighter ? 'Pink' : 'White'">
+            {{part2.style.cssText}} 
         </p>`,
-    styles: [
-        '.gray {background-color: LightGray}',
-        '.pink {background-color: Pink}'
-    ]
+    styles: ['.box {max-width: 400px; padding: 5px; }']
 })
 export class NgStyleComponent {
+    private big = false;
+    private back = false;
+    private bord = false;
 
-    private position: number;
-
-    private get styles(): any {
+    private get myStyles(): any {
         return {
-            fontSize: (this.position * 20) + 'px',
-            textDecoration: (this.position < 7) ? 'underline' : ''
-        }
-    }
-
-    private forLoopArray(elements: number): Array<any> {
-        return new Array(elements);
+            'font-size' : this.big ? '26px' : '14px',
+            'color' : this.back ? 'Blue' : 'Black',
+            'background-color' : this.back ? 'Pink' : 'White',
+            'border' : this.bord ? '1px solid Red' : ''
+        };
     }
 }

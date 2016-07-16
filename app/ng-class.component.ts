@@ -32,7 +32,7 @@ import { Component } from '@angular/core';
         .big { font-size: 26px; }
         .dull { background-color: LightGray; }
         .bright { color: Blue; background-color: Pink; }
-        .bright.border { border: 1px solid Red; }`
+        .border { border: 1px solid Red; }`
     ]
 })
 export class NgClassComponent {

@@ -13,8 +13,7 @@ import { NgStyleComponent } from "./ng-style.component";
         <ng-switch-directive *ngIf="showSection('ng-switch')"></ng-switch-directive>
         <ng-for-directive *ngIf="showSection('ng-for')"></ng-for-directive>
         <ng-class-directive *ngIf="showSection('ng-class')"></ng-class-directive>
-        <ng-style-directive *ngIf="showSection('ng-style')"></ng-style-directive>
-        `,
+        <ng-style-directive *ngIf="showSection('ng-style')"></ng-style-directive>`,
     directives: [
         NgIfComponent,
         NgSwitchComponent,

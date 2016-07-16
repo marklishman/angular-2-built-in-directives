@@ -4,10 +4,7 @@ import { Component } from '@angular/core';
     selector: 'ng-if-directive',
     template: `
         <h1>ngIf</h1>
-        
-        <p>
-            <button (click)="show=!show">{{show ? 'hide' : 'show'}}</button>
-        </p>
+        <button (click)="show=!show">{{show ? 'hide' : 'show'}}</button>
         
         <div *ngIf="show">
             <p>

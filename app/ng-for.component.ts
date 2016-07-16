@@ -24,7 +24,7 @@ export class NgForComponent {
             {id: 4, name: {forename: 'Sue', surname: 'Reece'}}
         ];
 
-    trackByPeople(index: number, person: any) {
+    private trackByPeople(index: number, person: any) {
         return person.id;
     }
 

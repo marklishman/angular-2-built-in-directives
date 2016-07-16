@@ -15,6 +15,7 @@ import { Component } from '@angular/core';
         
         <h3>Style binding</h3>
         <button (click)="brighter=!brighter">Bright {{brighter ? 'off' : 'on'}}</button>
+        
         <p #part2 class="box" [style.font-size.px]="brighter ? 26 : 14"
                               [style.background-color]="brighter ? 'Pink' : 'White'">
             {{part2.style.cssText}} 

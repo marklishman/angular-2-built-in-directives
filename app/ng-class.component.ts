@@ -23,6 +23,7 @@ import { Component } from '@angular/core';
         
         <h3>Class binding</h3>
         <button (click)="brighter=!brighter">Bright {{brighter ? 'off' : 'on'}}</button>
+        
         <p #part3 [class.box]="brighter" [class.bright]="brighter" [class.border]="brighter">
             Classes: {{part3.className}} 
         </p>`,

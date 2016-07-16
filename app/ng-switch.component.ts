@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'ng-switch-directive',
     template: `
-        <h1>ngSwitch</h1>
+        <h2>ngSwitch</h2>
         
         <select #select [(ngModel)]="choice">
             <option value="one">one</option>

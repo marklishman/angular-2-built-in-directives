@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'ng-class-directive',
     template: `
-        <h1>ngClass</h1>
+        <h2>ngClass</h2>
         
         <button (click)="myClasses='bright border'">Bright</button>
         <button (click)="myClasses='dull'">Dull</button>
@@ -28,23 +28,11 @@ import { Component } from '@angular/core';
             Classes: {{part3.className}} 
         </p>`,
     styles: [`
-        .box {
-            max-width: 400px;
-            padding: 5px;
-        }
-        .big {
-            font-size: 26px;
-        }
-        .dull {
-            background-color: LightGray;
-        }
-        .bright {
-            color: Blue;
-            background-color: Pink; 
-        }
-        .bright.border {
-            border: 1px solid Red;
-        }`
+        .box { max-width: 400px; padding: 5px; }
+        .big { font-size: 26px; }
+        .dull { background-color: LightGray; }
+        .bright { color: Blue; background-color: Pink; }
+        .bright.border { border: 1px solid Red; }`
     ]
 })
 export class NgClassComponent {

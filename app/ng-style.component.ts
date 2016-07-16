@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'ng-style-directive',
     template: `
-        <h1>ngStyle</h1>
+        <h2>ngStyle</h2>
         
         <button (click)="big=!big">Big {{big ? 'off' : 'on'}}</button>
         <button (click)="back=!back">Background {{back ? 'off' : 'on'}}</button>

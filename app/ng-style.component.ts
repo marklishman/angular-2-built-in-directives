@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
                               [style.background-color]="brighter ? 'Pink' : 'White'">
             {{part2.style.cssText}} 
         </p>`,
-    styles: ['.box {max-width: 400px; padding: 5px; }']
+    styles: ['.box {max-width: 450px; padding: 5px; }']
 })
 export class NgStyleComponent {
     private big = false;

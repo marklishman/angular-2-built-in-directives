@@ -12,12 +12,12 @@ import { Component } from '@angular/core';
             <option value="another">another</option>
         </select>
         
-        <p [ngSwitch]="choice">
-            <span *ngSwitchCase="'one'">First</span>
-            <span *ngSwitchCase="'two'">Second</span>
-            <span *ngSwitchCase="'three'">Third</span>
-            <span *ngSwitchDefault>Default</span>
-        </p>`
+        <div [ngSwitch]="choice">
+            <h3 *ngSwitchCase="'one'">First</h3>
+            <h3 *ngSwitchCase="'two'">Second</h3>
+            <h3 *ngSwitchCase="'three'">Third</h3>
+            <h3 *ngSwitchDefault>Default</h3>
+        </div>`
 })
 export class NgSwitchComponent {
     private choice: string = 'one';

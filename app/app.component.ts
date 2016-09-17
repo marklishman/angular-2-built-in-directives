@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
 
-import { NgIfComponent } from "./ng-if.component";
-import { NgSwitchComponent } from "./ng-switch.component";
-import { NgForComponent } from "./ng-for.component";
-import { NgClassComponent } from "./ng-class.component";
-import { NgStyleComponent } from "./ng-style.component";
-
 @Component({
     selector: 'app',
     template: `
@@ -14,13 +8,6 @@ import { NgStyleComponent } from "./ng-style.component";
         <ng-for-directive *ngIf="showSection('ng-for')"></ng-for-directive>
         <ng-class-directive *ngIf="showSection('ng-class')"></ng-class-directive>
         <ng-style-directive *ngIf="showSection('ng-style')"></ng-style-directive>`,
-    directives: [
-        NgIfComponent,
-        NgSwitchComponent,
-        NgForComponent,
-        NgClassComponent,
-        NgStyleComponent
-    ]
 })
 export class AppComponent {
 

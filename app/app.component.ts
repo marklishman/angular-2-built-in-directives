@@ -3,19 +3,15 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app',
     template: `
-        <ng-if-directive *ngIf="showSection('ng-if')"></ng-if-directive>
-        <ng-switch-directive *ngIf="showSection('ng-switch')"></ng-switch-directive>
-        <ng-for-directive *ngIf="showSection('ng-for')"></ng-for-directive>
-        <ng-class-directive *ngIf="showSection('ng-class')"></ng-class-directive>
-        <ng-style-directive *ngIf="showSection('ng-style')"></ng-style-directive>`,
+            <p>
+                <a [routerLink]="['/ng-if']" routerLinkActive="disabled">ngIf</a> |
+                <a [routerLink]="['/ng-switch']" routerLinkActive="disabled">ngSwitch</a> |
+                <a [routerLink]="['/ng-for']" routerLinkActive="disabled">ngFor</a> |
+                <a [routerLink]="['/ng-class']" routerLinkActive="disabled">ngClass</a> |
+                <a [routerLink]="['/ng-style']" routerLinkActive="disabled">ngStyle</a>
+            </p>
+            <div>
+                <router-outlet></router-outlet>
+            </div>`,
 })
-export class AppComponent {
-
-    private showSection(name: string): boolean {
-        if (!window.location.search) {
-            return true;
-        }
-        const PARAM = window.location.search.substr(1);
-        return PARAM === name;
-    }
-}
+export class AppComponent {}

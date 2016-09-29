@@ -5,6 +5,7 @@ import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 
 import { AppComponent }   from './app.component';
 import { NgIfComponent } from "./ng-if.component";
+import { ShowAndHideComponent } from "./show-and-hide.component";
 import { NgSwitchComponent } from "./ng-switch.component";
 import { NgForComponent } from "./ng-for.component";
 import { NgClassComponent } from "./ng-class.component";
@@ -20,6 +21,7 @@ import { routing } from "./app.routes";
     declarations: [
         AppComponent,
         NgIfComponent,
+        ShowAndHideComponent,
         NgSwitchComponent,
         NgForComponent,
         NgClassComponent,

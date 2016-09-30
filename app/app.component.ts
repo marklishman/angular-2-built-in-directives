@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     template: `
             <p>
                 <a [routerLink]="['/ng-if']" routerLinkActive="disabled">ngIf</a> |
-                <a [routerLink]="['/show-hide']" routerLinkActive="disabled">show-and-hide</a> |
+                <a [routerLink]="['/show-hide']" routerLinkActive="disabled">show & hide</a> |
                 <a [routerLink]="['/ng-switch']" routerLinkActive="disabled">ngSwitch</a> |
                 <a [routerLink]="['/ng-for']" routerLinkActive="disabled">ngFor</a> |
                 <a [routerLink]="['/ng-class']" routerLinkActive="disabled">ngClass</a> |

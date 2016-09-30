@@ -4,68 +4,43 @@ import { Component } from "@angular/core";
     selector: 'ng-if-directive',
     template: `
         <h2>Show and Hide Elements</h2>
-        
         <hr/>
         
         <p>
             ngIf condition is {{addToDom ? 'true' : 'false'}}    
-            <button (click)="addToDom=!addToDom">{{addToDom ? 'set to false' : 'set to true'}}</button>
+            <button (click)="addToDom=!addToDom">set to {{addToDom ? 'false' : 'true'}}</button>
         </p>
         <div #div1>
-            <h2 *ngIf="addToDom" >
-                This header is added and removed from the DOM
-            </h2>
+            <h3 *ngIf="addToDom" >This header is added to and removed from the DOM</h3>
         </div>
-
         <p>Children: {{div1.children.length}}, content: '{{div1.children[0]?.innerText}}'</p>
-
         <hr/>
 
         <p>
-            'hidden' property is {{hidden ? 'true' : 'false'}}
-            <button (click)="hidden=!hidden">{{hidden ? 'set to false' : 'set to true'}}</button>
+            hidden value is {{hidden ? 'true' : 'false'}}
+            <button (click)="hidden=!hidden">set to {{hidden ? 'false' : 'true'}}</button>
         </p>
         <div #div2>
-            <h2 [hidden]="hidden">
-                This header can be hidden but remains in the DOM
-            </h2>
+            <h3 [hidden]="hidden">This header can be hidden but remains in the DOM</h3>
+            <h3 [style.display]="hidden ? 'none' : 'block'">and this one too</h3>
         </div>
-
-        <p>Children: {{div2.children.length}}, content: '{{div2.children[0].innerText}}'</p>
-
-        <hr/>
-        
-        <p>
-            CSS display value is '{{styleDisplay}}' 
-            <button (click)="styleDisplay = (styleDisplay == 'block' ? 'none' : 'block')">{{styleDisplay}}</button>
-        </p>
-        <div #div3>
-            <h2 [style.display]="styleDisplay">
-                This header can be hidden but remains in the DOM
-            </h2>
-        </div>
-
-        <p>Children: {{div3.children.length}}, content: '{{div3.children[0].innerText}}'</p>
-        
+        <p>Children: {{div2.children.length}}, content: '{{div2.children[0].innerText}}', '{{div2.children[1].innerText}}'</p>
         <hr/>
         
         <p>
             CSS visible value is {{visible}} 
-            <button (click)="visible=!visible">{{visible ? 'set to false' : 'set to true'}}</button>
+            <button (click)="visible=!visible">set to {{visible ? 'false' : 'true'}}</button>
         </p>
-        <div #div4>
-            <h2 [style.visibility]="visible ? 'visible' : 'hidden'">
-                This header can be made invisible but remains in the DOM
-            </h2>
+        <div #div3>
+            <h3 [style.visibility]="visible ? 'visible' : 'hidden'">
+                This header remains in the DOM but the text is invisible
+            </h3>
         </div>
-
-        <p>Children: {{div4.children.length}}, content: '{{div3.children[0].innerText}}'</p>
-        
+        <p>Children: {{div3.children.length}}, content: '{{div3.children[0].innerText}}'</p>
         <hr/>`
 })
 export class ShowAndHideComponent {
     private addToDom: boolean = true;
     private hidden: boolean = false;
-    private styleDisplay: string = 'block';
     private visible: boolean = true;
 }

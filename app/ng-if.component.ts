@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
         
         <div *ngIf="show">
             <p>
-                <label><input #big type="radio" name="size" (change)="0" checked>Big</label>
-                <label><input #small type="radio" name="size" (change)="0">Small</label>
+                <label><input #big type="checkbox" name="size" (change)="0" checked>Big</label>
+                <label><input #small type="checkbox" name="size" (change)="0">Small</label>
             </p>
         
             <h3 *ngIf="big.checked">Big heading</h3>

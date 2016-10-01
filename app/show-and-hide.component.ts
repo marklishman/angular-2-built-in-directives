@@ -11,7 +11,7 @@ import { Component } from "@angular/core";
             <button (click)="addToDom=!addToDom">set to {{addToDom ? 'false' : 'true'}}</button>
         </p>
         <div #div1>
-            <h3 *ngIf="addToDom" >This header is added to and removed from the DOM</h3>
+            <h3 *ngIf="addToDom" >This heading is added to and removed from the DOM</h3>
         </div>
         <p>Children: {{div1.children.length}}, content: '{{div1.children[0]?.innerText}}'</p>
         <hr/>
@@ -21,7 +21,7 @@ import { Component } from "@angular/core";
             <button (click)="hidden=!hidden">set to {{hidden ? 'false' : 'true'}}</button>
         </p>
         <div #div2>
-            <h3 [hidden]="hidden">This header can be hidden but remains in the DOM</h3>
+            <h3 [hidden]="hidden">This heading can be hidden but remains in the DOM</h3>
             <h3 [style.display]="hidden ? 'none' : 'block'">and this one too</h3>
         </div>
         <p>Children: {{div2.children.length}}, content: '{{div2.children[0].innerText}}', '{{div2.children[1].innerText}}'</p>
@@ -33,11 +33,10 @@ import { Component } from "@angular/core";
         </p>
         <div #div3>
             <h3 [style.visibility]="visible ? 'visible' : 'hidden'">
-                This header remains in the DOM but the text is invisible
+                This heading remains in the DOM but the text is invisible
             </h3>
         </div>
-        <p>Children: {{div3.children.length}}, content: '{{div3.children[0].innerText}}'</p>
-        <hr/>`
+        <p>Children: {{div3.children.length}}, content: '{{div3.children[0].innerText}}'</p>`
 })
 export class ShowAndHideComponent {
     private addToDom: boolean = true;

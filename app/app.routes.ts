@@ -9,7 +9,7 @@ import { NgClassComponent } from "./ng-class.component";
 import { NgStyleComponent } from "./ng-style.component";
 
 export const routes: Routes = [
-    {path: '', redirectTo: '/ng-if', pathMatch: 'full'},
+    {path: '', redirectTo: '/', pathMatch: 'full'},
     {path: 'ng-if', component: NgIfComponent},
     {path: 'show-hide', component: ShowAndHideComponent},
     {path: 'ng-switch', component: NgSwitchComponent},
